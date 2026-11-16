@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111426">
+  <title>Estúdio Criativo | Programação Criativa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">✳</span>
+      <span>ESTÚDIO <strong>CRIATIVO</strong></span>
+    </a>
+    <span class="top-tag">UM UNIVERSO DE POSSIBILIDADES</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><span></span> PROGRAMAÇÃO CRIATIVA</div>
+      <h1>Imagine. Programe.<br><em>Crie algo incrível.</em></h1>
+      <p>
+        Um espaço para experimentar ideias, brincar com a programação
+        e transformar sua criatividade em experiências interativas.
+      </p>
+      <div class="hero-tags">
+        <span>✦ Jogos</span>
+        <span>✦ Animações</span>
+        <span>✦ Interatividade</span>
+      </div>
+    </section>
+
+    <nav class="tabs" aria-label="Experiências">
+      <button class="tab active" data-tab="game">01 <span>Pega-pega</span></button>
+      <button class="tab" data-tab="roulette">02 <span>Roleta criativa</span></button>
+      <button class="tab" data-tab="story">03 <span>Animação</span></button>
+    </nav>
+
+    <section class="experience active" id="game">
+      <div class="section-heading">
+        <div>
+          <span class="small-label">EXPERIÊNCIA 01 · JOGO</span>
+          <h2>Pega-pega estelar</h2>
+          <p>Use o mouse para controlar sua nave e escapar dos raios que estão atrás de você.</p>
+        </div>
+        <span class="status"><span></span> JOGO INTERATIVO</span>
+      </div>
+
+      <div class="game-layout">
+        <div class="game-frame">
+          <div class="game-top">
+            <span>✦ MISSÃO ESPACIAL</span>
+            <div class="game-stats">
+              <span>PONTOS <strong id="score">0</strong></span>
+              <span>TEMPO <strong id="timer">0s</strong></span>
+            </div>
+          </div>
+          <canvas id="gameCanvas" width="900" height="480">
+            Seu navegador não suporta canvas.
+          </canvas>
+          <div class="game-overlay" id="gameOverlay">
+            <div class="overlay-card">
+              <span class="overlay-icon">🚀</span>
+              <h3>Pronto para decolar?</h3>
+              <p>Movimente o mouse para pilotar. Desvie dos raios e faça a maior pontuação!</p>
+              <button class="primary-btn" id="startGame">Começar jogo</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="game-info">
+          <div class="info-card">
+            <span class="info-icon">🖱️</span>
+            <h3>Como jogar</h3>
+            <p>Mova o mouse dentro da área do jogo para controlar a nave.</p>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">⚡</span>
+            <h3>Fuja dos raios</h3>
+            <p>Os raios aparecem em clones e tentam alcançar sua nave.</p>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🏆</span>
+            <h3>Faça pontos</h3>
+            <p>Quanto mais tempo você sobreviver, maior será sua pontuação.</p>
+          </div>
+          <button class="secondary-btn full" id="restartGame">↻ Reiniciar partida</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="experience" id="roulette">
+      <div class="section-heading">
+        <div>
+          <span class="small-label">EXPERIÊNCIA 02 · ALEATORIEDADE</span>
+          <h2>Roleta criativa</h2>
+          <p>Gire a roleta e descubra qual desafio criativo será escolhido para você.</p>
+        </div>
+        <span class="status"><span></span> ESCOLHA ALEATÓRIA</span>
+      </div>
+
+      <div class="roulette-layout">
+        <div class="wheel-area">
+          <div class="wheel-pointer">▼</div>
+          <div class="wheel" id="wheel">
+            <div class="wheel-center">✳</div>
+          </div>
+          <button class="primary-btn spin-btn" id="spinButton">Girar roleta</button>
+        </div>
+
+        <div class="roulette-side">
+          <div class="result-card">
+            <span class="small-label">SEU DESAFIO</span>
+            <div class="result-emoji" id="resultEmoji">🎲</div>
+            <h3 id="resultTitle">Aguardando o sorteio</h3>
+            <p id="resultDescription">Clique em girar para descobrir sua próxima missão criativa.</p>
+          </div>
+
+          <div class="idea-list">
+            <h3>O que pode sair?</h3>
+            <ul id="ideaList">
+              <li>Desenhar um personagem</li>
+              <li>Criar uma história</li>
+              <li>Inventar um jogo</li>
+              <li>Fazer uma animação</li>
+              <li>Desenhar um planeta</li>
+              <li>Criar um robô</li>
+              <li>Inventar um desafio</li>
+              <li>Desenhar um animal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="story">
+      <div class="section-heading">
+        <div>
+          <span class="small-label">EXPERIÊNCIA 03 · ANIMAÇÃO</span>
+          <h2>Quando ninguém está olhando...</h2>
+          <p>Objetos ganham vida em uma pequena história animada. Escolha um personagem e comece a aventura.</p>
+        </div>
+        <span class="status"><span></span> HISTÓRIA ANIMADA</span>
+      </div>
+
+      <div class="story-controls">
+        <label for="characterSelect">Escolha o personagem</label>
+        <select id="characterSelect">
+          <option value="robot">🤖 Robô</option>
+          <option value="cat">🐱 Gato</option>
+          <option value="alien">👽 Alienígena</option>
+          <option value="ghost">👻 Fantasma</option>
+        </select>
+        <button class="primary-btn" id="playStory">▶ Começar história</button>
+      </div>
+
+      <div class="story-stage" id="storyStage">
+        <div class="story-window"></div>
+        <div class="moon">☾</div>
+        <div class="star star-one">✦</div>
+        <div class="star star-two">✧</div>
+        <div class="star star-three">✦</div>
+        <div class="shelf"></div>
+        <div class="story-character" id="storyCharacter">🤖</div>
+        <div class="speech" id="speech">Parece que está tudo quieto por aqui...</div>
+        <div class="story-floor"></div>
+        <div class="story-caption" id="storyCaption">A aventura está prestes a começar.</div>
+      </div>
+
+      <div class="story-bottom">
+        <span id="storyStep">CENA 01 · A NOITE CHEGOU</span>
+        <button class="secondary-btn" id="nextScene">Próxima cena →</button>
+      </div>
+    </section>
+
+    <section class="learning">
+      <div class="learning-icon">✦</div>
+      <div>
+        <span class="small-label">APRENDIZADO</span>
+        <h2>Criatividade também é programação.</h2>
+        <p>
+          Neste projeto, usamos eventos, movimento, repetição, condições,
+          variáveis, aleatoriedade e animações para construir experiências
+          que respondem às ações de quem está usando.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <span>ESTÚDIO CRIATIVO</span>
+      <span>Projeto educacional · Programação com HTML, CSS e JavaScript</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
